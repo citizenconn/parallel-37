@@ -4,5 +4,5 @@
  * Time: 9:09 PM
  */
 exports.index = function (req, res) {
-    res.send("hi p37");
+    res.render('index.html', {title:"P37--FUCK YEAH"});
 };
