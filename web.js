@@ -9,6 +9,7 @@ app.configure(function(){
 });
 
 app.get('/', routes.index);
+app.get('/fbChannel', routes.fbChannel);
 
 var port = process.env.PORT || 5000;
 
