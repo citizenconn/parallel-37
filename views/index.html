@@ -8,8 +8,10 @@
 <script>
     window.fbAsyncInit = function() {
 
+        var appId = (window.location.hostname == 'localhost') ? "302550833175687" : "514013545281416";
+
         FB.init({
-            appId      : '302550833175687', // App ID
+            appId      : appId, // App ID
             channelUrl : "//" + window.location.hostname + "/fbChannel",
             status     : true, // check login status
             cookie     : true, // enable cookies to allow the server to access the session
@@ -22,7 +24,7 @@
                 // user has auth'd your app and is logged into Facebook
                 FB.api('/me', function(me){
                     if (me.name) {
-                        document.getElementById('auth-displayname').innerHTML = me.name;
+                        document.getElementById('auth-displayname').innerHTML = "You are logged in as " + me.name;
                     }
                 })
                 document.getElementById('auth-loggedout').style.display = 'none';
